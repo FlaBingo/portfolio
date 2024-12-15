@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fully functional calculator</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <link rel="stylesheet" href="pract1.css">
+
+    <style>
+        .display{
+            text-align: right;
+        }
+
+        #container h1 {
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="prac1.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <p class="showTime">Time</p>
+        <div class="nav">
+            <input type="text" name="search" class="search searchAlert" autocomplete="cc-name" placeholder="Enter your name..." />
+            <button class="disco" type="button">Disco Mode</button>
+            <button id="themebutt" type="button">Dark</button>
+        </div>
+    </nav>
+
+    <div id="container">
+
+        <h1>Perfect calculator <br> with Advanced features</h1>
+
+        <div class="main">
+
+            <input type="text" class="display" class="search" id="search" placeholder="Output">
+            <div class="buttons">
+                <div class="rows firstrow">
+                    <button onclick="clearDisplay()" class="btn allClear">AC</button>
+                    <button onclick="Undo()" class="btn clear">Undo</button>
+                    <button  class="btn shuffle">+/-</button>
+                    <button  onclick="av('/')" class="btn divide operator">/</button>
+                </div>
+                <div class="rows secondrow">
+                    <button  onclick="av('7')" class="btn 7">7</button>
+                    <button  onclick="av('8')" class="btn 8">8</button>
+                    <button  onclick="av('9')" class="btn 9">9</button>
+                    <button  onclick="av('*')" class="btn multiply operator">*</button>
+                </div>
+                <div class="rows thirdrow">
+                    <button  onclick="av('4')" class="btn 4">4</button>
+                    <button  onclick="av('5')" class="btn 5">5</button>
+                    <button  onclick="av('6')" class="btn 6">6</button>
+                    <button  onclick="av('-')" class="btn sub operator">-</button>
+                </div>
+                <div class="rows fourthrow">
+                    <button  onclick="av('1')" class="btn 1">1</button>
+                    <button  onclick="av('2')" class="btn 2">2</button>
+                    <button  onclick="av('3')" class="btn 3">3</button>
+                    <button  onclick="av('+')" class="btn add operator">+</button>
+                </div>
+                <div class="rows fifthrow">
+                    <button onclick="av('%')" class="btn percentage">%</button>
+                    <button  onclick="av('0')"  class="btn 0">0</button>
+                    <button onclick="av('.')" class="btn period">.</button>
+                    <button  onclick="av(calculate())" class="btn assign operator">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script type="module" src="./pract1.js"></script>
+</body>
+
+</html>
