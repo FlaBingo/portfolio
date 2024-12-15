@@ -161,9 +161,14 @@ p {
 }
 
 footer{
+    padding: 0 10px;
     height: 5vh;
     background-color: rgb(143, 37, 37);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+
+.source-code{
+    text-decoration: underline;
 }
