@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#navbar {
+    width: 100%;
+    height: 7vh;
+    background-color: brown;
+    position: fixed;
+    top: 0;
+}
+
+#navbar ul {
+    height: 7vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#navbar ul li {
+    list-style: none;
+    padding: 0 15px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+h1{
+    color: white;
+    margin: 10px 0;
+}
+
+#welcome-section {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-color: rgb(56, 56, 56);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-style: italic;
+    font-size: 16px;
+    color: rgb(249, 231, 207);
+}
+
+#projects {
+    padding: 50px 100px;
+    width: 100%;
+    background-color: rgb(58, 82, 123);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#projects h1{
+    margin: 50px;
+}
+
+.collection{
+    margin-bottom: 50px;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    /* grid-auto-rows: minmax(100px, auto); */
+}
+
+.project-tile{
+    width: 25vw;
+    height: 15vw;
+    border-radius: 5px;
+    background-color: rgb(194, 123, 123);
+}
+
+#contact{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(48, 48, 48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contact #contact-links{
+    margin: 20px ;
+    color: white;
+    display: flex;
+    
+}
+
+#contact #contact-links .link{
+    padding: 20px 30px;
+}
