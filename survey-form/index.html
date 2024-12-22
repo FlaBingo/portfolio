@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey-Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <form id="survey-form" action="">
+        <fieldset id="basic-info">
+            <label id="name-label" for="name">Name:
+                <input id="name" name="name" type="text" placeholder="Enter your Name" required autofocus autocomplete="cc-name">
+            </label>
+            <label id="email-label" for="email">Email:
+                <input type="email" name="email" id="email" placeholder="Enter your Email" required >
+            </label>
+            <label id="number-label" for="age">Age:
+                <input type="number" name="age" id="age" placeholder="Enter your Age" required min="4" max="90" >
+            </label>
+        </fieldset>
+
+        <p>Pick your favourite Color:</p>
+        <select name="dropdown" id="dropdown">
+            <option value="0">Select</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+            <option value="yellow">yellow</option>
+            <option value="pink">pink</option>
+            <option value="white">white</option>
+            <option value="black">black</option>
+        </select>
+
+        <fieldset id="option-buttons">
+            <div class="genders">
+                <div class="pick-gender">
+                    <p>Gender: </p>
+                    <label for="radio-straight"><input value="0" type="radio" name="radio" id="radio-straight">Straight</label>
+                    <label for="radio-other"><input value="1" type="radio" name="radio" id="radio-other">Other</label>
+                </div>
+                <div class="straight-gender">
+                    <select name="straight" id="straight">
+                        <option value="0">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="other-gender">
+                    <select name="others" id="others">
+                        <option value="0">select</option>
+                        <option value="gay">Gay</option>
+                        <option value="lesbian">Lesbian</option>
+                        <option value="bisexual">Bisexual</option>
+                        <option value="shemale">Shemale</option>
+                        <option value="gmail">Gmail</option>
+                        <option value="transgender">Transgender</option>
+                        <option value="non-binary">Non-Binary</option>
+                        <option value="intersex">Intersex</option>
+                    </select>
+                </div>
+            </div>
+            <br />
+            <p>Hobbies: </p>
+            <label for="reading"><input type="checkbox" name="hobby" id="reading" value="reading">Reading</label>
+            <label for="sports"><input type="checkbox" name="hobby" id="sports" value="sports">Sports</label>
+            <label for="dancing"><input type="checkbox" name="hobby" id="dancing" value="dancing">Dancing</label>
+            <label for="painting"><input type="checkbox" name="hobby" id="painting" value="painting">Painting</label>
+            <label for="learning"><input type="checkbox" name="hobby" id="learning" value="learning">Learning</label>
+            <label for="traveling"><input type="checkbox" name="hobby" id="traveling" value="traveling">Traveling</label>
+        </fieldset>
+
+        <p>Bio: </p>
+        <textarea name="text" id="textarea" placeholder="Enter something about your self..." rows="4"
+            maxlength="150"></textarea>
+        <button id="submit" type="submit">Submit</button>
+    </form>
+    <hr>
+    <footer>
+        <h2>Summary: </h2>
+        <p id="summary">Here goes your summary based on the details.</p>
+    </footer>
+
+
+    <script src='script.js'></script>
+</body>
+
+</html>
