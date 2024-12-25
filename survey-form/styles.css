@@ -26,7 +26,6 @@ body{
 #description{
     width: 100%;
     text-align: center;
-    font-style: italic;
     transition: all 1.5s ease-in;
 }
 
