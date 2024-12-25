@@ -96,12 +96,6 @@ input, select, textarea, #submit{
     
 }
 
-@media (max-width: 480px){
-    body{
-        font-size: 16px;
-    }
-}
-
 .straight-gender, .other-gender{
     display: none;
 }
@@ -132,4 +126,13 @@ footer p{
 
 .underlined{
     text-decoration: underline;
+}
+
+@media (max-width: 480px){
+    body{
+        font-size: 16px;
+    }
+    #survey-form{
+        width: 90vw;
+    }
 }
