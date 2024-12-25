@@ -217,6 +217,7 @@ footer{
         font-size: 0.9em;
     }
     .gallery{
+        margin-top: 10em;
         width: inherit;
         background-position: center;
     }
