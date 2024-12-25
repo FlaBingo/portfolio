@@ -221,6 +221,9 @@ footer{
         flex-direction: column-reverse;
         align-items: center;
     }
+    .section-1{
+        width: 80vw;
+    }
     .gallery{
         display: none;
     }
