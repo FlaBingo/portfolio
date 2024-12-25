@@ -68,14 +68,11 @@ h1{
     width: 100%;
     height: 100vh;
     color: rgb(0, 0, 0);
-    /* background: linear-gradient(45deg, #2E3192 , #1BFFFF); */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
-
-
 
 .section-1{
     width: 40vw;
@@ -105,12 +102,6 @@ h1{
     background-size: 90em;
 }
 
-
-/* #Profile-Picture{
-    width: inherit;
-    border-radius: 10px;
-} */
-
 p {
     font-style: italic;
     font-size: 16px;
@@ -138,7 +129,6 @@ p {
     place-items: center;
     grid-template-columns: repeat(2, 1fr);
     gap: 100px;
-    /* grid-auto-rows: minmax(100px, auto); */
 }
 
 .project-tile{
@@ -215,7 +205,6 @@ footer{
         width: 100%;
         height: 100vh;
         color: rgb(0, 0, 0);
-        /* background: linear-gradient(45deg, #2E3192 , #1BFFFF); */
         display: flex;
         justify-content: center;
         flex-direction: column-reverse;
@@ -233,6 +222,18 @@ footer{
         text-align: center;
         display: flex;
         flex-direction: column;
-    }    
+    }
+    .project-tile{
+        width: 70vw;
+        height: 40vw;
+    }
+    .collection{
+        margin-bottom: 50px;
+        display: grid;
+        place-content: center;
+        place-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 100px;
+    } 
     
 }
