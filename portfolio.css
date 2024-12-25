@@ -205,7 +205,7 @@ footer{
         width: 100%;
         color: rgb(0, 0, 0);
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         flex-direction: column-reverse;
         align-items: center;
     }
