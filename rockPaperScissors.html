@@ -20,7 +20,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 4em;
+            gap: 1em;
             flex-direction: column;
         }
 
@@ -74,13 +74,22 @@
                 display: flex;
                 flex-direction: column;
             }
+            button{
+                margin: 0.3em 0;
+            }
+            .write{
+                margin: 0.3em 0;
+            }
         }
     </style>
 </head>
 
 <body>
     
-    <h2>Let's play the Game!</h2>
+    <div class="header">
+        <h2>Let's play the Game!</h2>
+        <p>First one to get 10 points Win</p>
+    </div>
     <h5 class="write"></h5>
     <div class="collection">
         <button title="Rock" onclick="
@@ -100,11 +109,11 @@
         </button>
         <button class="reset" title="Reset the scores" onclick="reset()">Reset Score</button>
     </div>
-
-
     <h4 class="score"></h4>
+    <div class="result"></div>
 
     <script>
+        const resultHtml = document.querySelector(".result");
         // const score = {
         //     wins: 0,
         //     loses:0,
@@ -197,12 +206,22 @@
             }
 
             document.querySelector('.write').innerHTML = `You: ${userMove}<br>Computer: ${computerMove}<br>${result}`;
-
             document.querySelector('.score').innerHTML = `Wins: ${score.wins}   Loses: ${score.loses}   Ties: ${score.ties}`;
-
             console.log(score);
-
             localStorage.setItem('newScore', JSON.stringify(score));
+            
+            
+            
+            if(score.wins === 10 || score.loses === 10){
+                if(score.loses < 10){
+                    resultHtml.innerHTML = "Hurray! You Won the Game";
+                }else{
+                    resultHtml.innerHTML = "Unlucky, Try again next time";
+                }
+                reset();
+            }else{
+                resultHtml.innerHTML = "";
+            }
         }
 
         function reset() {
@@ -214,8 +233,6 @@
             console.log(score);
             document.querySelector(".write").style.backgroundColor = "white";
         }
-
-
     </script>
 
 
