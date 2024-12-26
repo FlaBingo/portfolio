@@ -162,6 +162,12 @@ p {
 .project-3{
     background-image: url("./images/Screenshot\ 2024-12-22\ 210908.png");
 }
+.project-4{
+    background-image: url("./images/rockPaperScissorsImage.png");
+}
+.project-n{
+    background-image: url("./images/workInProgress.png");
+}
 
 #contact{
     width: 100%;
