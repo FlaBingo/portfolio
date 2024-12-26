@@ -138,6 +138,7 @@ p {
     background-color: rgb(194, 123, 123);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     transition: all 0.3s ease;
 }
 .project-tile:hover{
