@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(45deg, #662D8C, #ED1E79);
+            color: rgb(255, 255, 255);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4em;
+            flex-direction: column;
+        }
+
+        button {
+            text-align: center;
+            margin: 0 0.5em;
+            background-color: antiquewhite;
+            border-radius: 5px;
+            padding: 0.4em 2em;
+            border: none;
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: all 0.1s ease-in;
+        }
+        button:hover{
+            background-color: rgb(210, 197, 179);
+            transform: scale(1.1);
+        }
+
+        .reset {
+            background-color: rgb(249, 177, 141);
+        }
+        .reset:hover{
+            background-color: rgb(219, 156, 124);
+        }
+
+        .write {
+            width: 80vw;
+            min-height: 7em;
+            color: black;
+            padding: 10px;
+            font-size: 1.3em;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .15s ease-in;
+            background-color: rgb(227, 242, 255);
+            border: 5px solid black;
+            border-radius: 5px;
+        }
+
+        .collection{
+            display: inline;
+        }
+        .score{
+            font-size: 1.8em;
+        }
+        @media (max-width: 750px){
+            .collection{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h2>Let's play the Game!</h2>
+    <h5 class="write"></h5>
+    <div class="collection">
+        <button title="Rock" onclick="
+            play('Rock');
+        ">
+            Rock
+        </button>
+        <button title="Paper" onclick="
+            play('Paper')
+        ">
+            Paper
+        </button>
+        <button title="Scissor" onclick="
+            play('Scissor')
+            ">
+            Scissors
+        </button>
+        <button class="reset" title="Reset the scores" onclick="reset()">Reset Score</button>
+    </div>
+
+
+    <h4 class="score"></h4>
+
+    <script>
+        // const score = {
+        //     wins: 0,
+        //     loses:0,
+        //     ties:0,
+        // }
+        const score = JSON.parse(localStorage.getItem('newScore')) || {
+            wins: 0,
+            loses: 0,
+            ties: 0
+        };
+
+        // if (!score){
+        //     score = {
+        //         wins: 0,
+        //         loses:0,
+        //         ties:0,
+        //     }
+        // }
+
+        function computer() {
+            const randomNumber = Math.ceil(Math.random() * 3);
+            let computerMove = "";
+            if (randomNumber === 1) {
+                computerMove = 'Rock';
+            }
+            else if (randomNumber === 2) {
+                computerMove = 'Paper'
+            }
+            else if (randomNumber === 3) {
+                computerMove = "Scissor"
+            }
+            return computerMove
+        }
+
+        function play(userMove) {
+            let result = '';
+            const computerMove = computer();
+            if (userMove === "Rock") {
+                if (computerMove === 'Rock') {
+                    result = "It's a Tie";
+                    score.ties++;
+                }
+                else if (computerMove === 'Paper') {
+                    result = 'Computer Won';
+                    score.loses++
+                }
+                else {
+                    result = 'You Won';
+                    score.wins++
+                }
+            }
+            else if (userMove === 'Paper') {
+                if (computerMove === 'Paper') {
+                    result = "It's a Tie";
+                    score.ties++;
+                }
+                else if (computerMove === 'Scissor') {
+                    result = 'Computer Won';
+                    score.loses++
+                }
+                else {
+                    result = 'You Won';
+                    score.wins++
+                }
+
+            }
+            else if (userMove === 'Scissor') {
+                if (computerMove === 'Scissor') {
+                    result = "It's a Tie";
+                    score.ties++;
+                }
+                else if (computerMove === 'Rock') {
+                    result = 'Computer Won';
+                    score.loses++
+                }
+                else {
+                    result = 'You Won';
+                    score.wins++
+                }
+            }
+
+            if (result === "You Won") {
+                document.querySelector(".write").style.backgroundColor = "lightgreen";
+            }
+            else if (result === "Computer Won") {
+                document.querySelector(".write").style.backgroundColor = "red";
+            }
+            else if (result === "It's a Tie") {
+                document.querySelector(".write").style.backgroundColor = "yellow";
+            }
+
+            document.querySelector('.write').innerHTML = `You: ${userMove}<br>Computer: ${computerMove}<br>${result}`;
+
+            document.querySelector('.score').innerHTML = `Wins: ${score.wins}   Loses: ${score.loses}   Ties: ${score.ties}`;
+
+            console.log(score);
+
+            localStorage.setItem('newScore', JSON.stringify(score));
+        }
+
+        function reset() {
+            score.wins = 0;
+            score.loses = 0;
+            score.ties = 0;
+            document.querySelector('.score').innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}`;
+            document.querySelector(".write").innerHTML = "";
+            console.log(score);
+            document.querySelector(".write").style.backgroundColor = "white";
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
