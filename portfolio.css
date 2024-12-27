@@ -168,6 +168,9 @@ p {
 .project-4{
     background-image: url("./images/rockPaperScissorsImage.png");
 }
+.project-5{
+    background-image: url("./images/palindromeImage.png");
+}
 .project-n{
     background-image: url("./images/workInProgress.png");
 }

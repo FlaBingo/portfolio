@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(47, 47, 47);
+    color: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    text-align: center;
+}
+.container{
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+.section{
+    width: inherit;
+    padding: 0 0.5em;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 0 9px 0.1px rgb(0, 0, 150);
+}
+.section label{
+    margin: 1.5em 0;
+    display: block;
+    text-align: center;
+
+}
+.section .subsection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em 0;
+}
+#text-input, #check-btn{
+    padding: 0.7em 1.5em;
+    margin: 1em;
+}
+#text-input{
+    width: 50%;
+    border: none;
+    border-bottom: 3px solid blueviolet;
+}
+#check-btn{
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: aliceblue;
+    font-weight: 700;
+    border: none;
+}
+#check-btn:hover{
+    background-color: rgb(122, 37, 202);
+    cursor: pointer;
+}
+#result{
+    text-align: center;
+    font-size: 1.1em;
+    margin: 1.4em 0;
+}
+.description{
+    /* text-indent: 4px; */
+    background-color: rgb(44, 85, 8);
+    padding: 2em;
+    border-radius: 20px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+
+@media (max-width: 500px){
+    .container{
+        width: 70vw;
+    }
+    .subsection{
+        flex-direction: column;
+    }
+    #text-input{
+        width: 80%;
+    }
+    .header h2{
+        padding: 2em 0;
+    }
+}
