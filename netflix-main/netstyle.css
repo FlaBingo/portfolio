@@ -6,7 +6,7 @@
   }
 
   body {
-      background-color: rgb(45, 45, 45);
+      background-color: rgb(81, 81, 81);
       color: white;
       font-family: 'Poppins', sans-serif;
   }
@@ -121,4 +121,18 @@
 
   .cont {
       width: 40vw;
+  }
+
+  @media (max-width: 500px){
+    .section{
+        flex-direction: column;
+        height: 80vh;
+    }
+    .cont{
+        width: 80vw;
+        margin-top: 10px;
+    }
+    .section:nth-child(even) {
+        flex-direction: column-reverse;
+    }
   }
