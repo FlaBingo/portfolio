@@ -117,7 +117,24 @@ p {
     align-items: center;
     flex-direction: column;
 }
+#mega-projects {
+    padding: 50px 100px;
+    width: 100%;
+    background: #51a2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 #projects h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: rgb(51, 51, 51);
+}
+
+#mega-projects h1{
     text-align: center;
     margin-top: 20px;
     margin-bottom: 50px;
